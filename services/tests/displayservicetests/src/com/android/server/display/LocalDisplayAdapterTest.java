@@ -118,7 +118,7 @@ public class LocalDisplayAdapterTest {
     @Mock
     private DisplayManagerFlags mFlags;
     @Mock
-    private DisplayPowerController mMockedDisplayPowerController;
+    private DisplayPowerControllerInterface mMockedDisplayPowerController;
 
     private Handler mHandler;
 
