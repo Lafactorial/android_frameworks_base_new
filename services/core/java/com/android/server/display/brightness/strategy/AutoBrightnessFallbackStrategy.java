@@ -100,7 +100,6 @@ public final class AutoBrightnessFallbackStrategy implements DisplayBrightnessSt
         writer.println("AutoBrightnessFallbackStrategy:");
         writer.println("  mLeadDisplayId=" + mLeadDisplayId);
         writer.println("  mIsDisplayEnabled=" + mIsDisplayEnabled);
-        writer.println("");
         if (mScreenOffBrightnessSensorController != null) {
             IndentingPrintWriter ipw = new IndentingPrintWriter(writer, " ");
             mScreenOffBrightnessSensorController.dump(ipw);

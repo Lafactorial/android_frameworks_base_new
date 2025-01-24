@@ -133,8 +133,7 @@ final class SmallAreaDetectionController {
     }
 
     void dump(PrintWriter pw) {
-        pw.println("Small area detection allowlist:");
-        pw.println("-------------------------------");
+        pw.println("Small area detection allowlist");
         pw.println("  Packages:");
         synchronized (mLock) {
             for (String pkg : mAllowPkgMap.keySet()) {

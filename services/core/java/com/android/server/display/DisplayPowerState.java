@@ -356,6 +356,7 @@ final class DisplayPowerState {
     }
 
     public void dump(PrintWriter pw) {
+        pw.println();
         pw.println("Display Power State:");
         pw.println("  mStopped=" + mStopped);
         pw.println("  mScreenState=" + Display.stateToString(mScreenState));

@@ -628,9 +628,7 @@ final class PersistentDataStore {
     }
 
     public void dump(PrintWriter pw) {
-        pw.println("PersistentDataStore:");
-        pw.println("--------------------");
-
+        pw.println("PersistentDataStore");
         pw.println("  mLoaded=" + mLoaded);
         pw.println("  mDirty=" + mDirty);
         pw.println("  RememberedWifiDisplays:");

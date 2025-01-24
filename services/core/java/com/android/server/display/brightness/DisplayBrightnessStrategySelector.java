@@ -262,7 +262,6 @@ public class DisplayBrightnessStrategySelector {
     public void dump(PrintWriter writer) {
         writer.println();
         writer.println("DisplayBrightnessStrategySelector:");
-        writer.println("----------------------------------");
         writer.println("  mDisplayId= " + mDisplayId);
         writer.println("  mOldBrightnessStrategyName= " + mOldBrightnessStrategyName);
         writer.println(

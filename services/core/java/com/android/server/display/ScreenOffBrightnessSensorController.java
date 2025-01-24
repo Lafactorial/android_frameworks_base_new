@@ -121,7 +121,6 @@ public class ScreenOffBrightnessSensorController implements SensorEventListener 
     /** Dump current state */
     public void dump(PrintWriter pw) {
         pw.println("Screen Off Brightness Sensor Controller:");
-        pw.println("----------------------------------------");
         IndentingPrintWriter idpw = new IndentingPrintWriter(pw);
         idpw.increaseIndent();
         idpw.println("registered=" + mRegistered);

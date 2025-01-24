@@ -3422,7 +3422,6 @@ public final class DisplayManagerService extends SystemService {
             pw.println();
             final int displayStateCount = mDisplayStates.size();
             pw.println("Display States: size=" + displayStateCount);
-            pw.println("---------------------");
             for (int i = 0; i < displayStateCount; i++) {
                 final int displayId = mDisplayStates.keyAt(i);
                 final int displayState = mDisplayStates.valueAt(i);
@@ -3438,7 +3437,6 @@ public final class DisplayManagerService extends SystemService {
 
             pw.println();
             pw.println("Display Adapters: size=" + mDisplayAdapters.size());
-            pw.println("------------------------");
             for (DisplayAdapter adapter : mDisplayAdapters) {
                 pw.println("  " + adapter.getName());
                 adapter.dumpLocked(ipw);
@@ -3446,7 +3444,6 @@ public final class DisplayManagerService extends SystemService {
 
             pw.println();
             pw.println("Display Devices: size=" + mDisplayDeviceRepo.sizeLocked());
-            pw.println("-----------------------");
             mDisplayDeviceRepo.forEachLocked(device -> {
                 pw.println("  " + device.getDisplayDeviceInfoLocked());
                 device.dumpLocked(ipw);
@@ -3458,7 +3455,6 @@ public final class DisplayManagerService extends SystemService {
             final int callbackCount = mCallbacks.size();
             pw.println();
             pw.println("Callbacks: size=" + callbackCount);
-            pw.println("-----------------");
             for (int i = 0; i < callbackCount; i++) {
                 CallbackRecord callback = mCallbacks.valueAt(i);
                 pw.println("  " + i + ": mPid=" + callback.mPid
@@ -3471,7 +3467,6 @@ public final class DisplayManagerService extends SystemService {
             for (int i = 0; i < displayPowerControllerCount; i++) {
                 mDisplayPowerControllers.valueAt(i).dump(pw);
             }
-
             pw.println();
             mPersistentDataStore.dump(pw);
 
@@ -3490,10 +3485,8 @@ public final class DisplayManagerService extends SystemService {
         }
         pw.println();
         mDisplayModeDirector.dump(pw);
-        pw.println();
         mBrightnessSynchronizer.dump(pw);
         if (mSmallAreaDetectionController != null) {
-            pw.println();
             mSmallAreaDetectionController.dump(pw);
         }
 

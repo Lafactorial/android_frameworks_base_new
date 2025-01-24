@@ -441,7 +441,6 @@ public class DisplayManagerFlags {
      */
     public void dump(PrintWriter pw) {
         pw.println("DisplayManagerFlags:");
-        pw.println("--------------------");
         pw.println(" " + mAdaptiveToneImprovements1);
         pw.println(" " + mAdaptiveToneImprovements2);
         pw.println(" " + mBackUpSmoothDisplayAndForcePeakRefreshRateFlagState);

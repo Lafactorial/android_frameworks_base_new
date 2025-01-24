@@ -265,7 +265,6 @@ class BrightnessThrottler {
 
     private void dumpLocal(PrintWriter pw) {
         pw.println("BrightnessThrottler:");
-        pw.println("--------------------");
         pw.println("  mThermalBrightnessThrottlingDataId=" + mThermalBrightnessThrottlingDataId);
         pw.println("  mThermalThrottlingData=" + mThermalThrottlingData);
         pw.println("  mUniqueDisplayId=" + mUniqueDisplayId);

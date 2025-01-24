@@ -417,7 +417,6 @@ public final class WakelockController {
      */
     public void dumpLocal(PrintWriter pw) {
         pw.println("WakelockController State:");
-        pw.println("-------------------------");
         pw.println("  mDisplayId=" + mDisplayId);
         pw.println("  mUnfinishedBusiness=" + hasUnfinishedBusiness());
         pw.println("  mOnStateChangePending=" + isOnStateChangedPending());
