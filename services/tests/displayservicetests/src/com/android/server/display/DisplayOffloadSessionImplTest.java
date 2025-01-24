@@ -38,7 +38,7 @@ public class DisplayOffloadSessionImplTest {
     private DisplayManagerInternal.DisplayOffloader mDisplayOffloader;
 
     @Mock
-    private DisplayPowerController mDisplayPowerController;
+    private DisplayPowerControllerInterface mDisplayPowerController;
 
     private DisplayOffloadSessionImpl mSession;
 

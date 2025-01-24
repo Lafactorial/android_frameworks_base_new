@@ -39,12 +39,12 @@ public class DisplayOffloadSessionImpl implements DisplayManagerInternal.Display
 
     @Nullable
     private final DisplayManagerInternal.DisplayOffloader mDisplayOffloader;
-    private final DisplayPowerController mDisplayPowerController;
+    private final DisplayPowerControllerInterface mDisplayPowerController;
     private boolean mIsActive;
 
     public DisplayOffloadSessionImpl(
             @Nullable DisplayManagerInternal.DisplayOffloader displayOffloader,
-            DisplayPowerController displayPowerController) {
+            DisplayPowerControllerInterface displayPowerController) {
         mDisplayOffloader = displayOffloader;
         mDisplayPowerController = displayPowerController;
     }
