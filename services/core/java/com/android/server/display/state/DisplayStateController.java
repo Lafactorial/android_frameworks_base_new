@@ -114,9 +114,9 @@ public class DisplayStateController {
      *
      * @param pw The PrintWriter used to dump the state.
      */
-    public void dump(PrintWriter pw) {
+    public void dumpsys(PrintWriter pw) {
+        pw.println();
         pw.println("DisplayStateController:");
-        pw.println("-----------------------");
         pw.println("  mPerformScreenOffTransition:" + mPerformScreenOffTransition);
         pw.println("  mDozeStateOverride=" + mDozeStateOverride);
 

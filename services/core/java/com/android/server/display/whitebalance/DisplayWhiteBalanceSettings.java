@@ -23,6 +23,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Slog;
 
+import com.android.internal.util.Preconditions;
 import com.android.server.LocalServices;
 import com.android.server.display.color.ColorDisplayService;
 import com.android.server.display.color.ColorDisplayService.ColorDisplayServiceInternal;
@@ -128,8 +129,7 @@ public class DisplayWhiteBalanceSettings implements
      *      The writer used to dump the state.
      */
     public void dump(PrintWriter writer) {
-        writer.println("DisplayWhiteBalanceSettings:");
-        writer.println("----------------------------");
+        writer.println("DisplayWhiteBalanceSettings");
         writer.println("  mLoggingEnabled=" + mLoggingEnabled);
         writer.println("  mContext=" + mContext);
         writer.println("  mHandler=" + mHandler);

@@ -1064,9 +1064,6 @@ final class LogicalDisplay {
 
     public void dumpLocked(PrintWriter pw) {
         pw.println("mDisplayId=" + mDisplayId);
-        pw.println("mPrimaryDisplayDevice=" + (mPrimaryDisplayDevice != null
-                ? mPrimaryDisplayDevice.getNameLocked() + "(" + mPrimaryDisplayDevice.getUniqueId()
-                        + ")" : "null"));
         pw.println("mIsEnabled=" + mIsEnabled);
         pw.println("mIsInTransition=" + mIsInTransition);
         pw.println("mLayerStack=" + mLayerStack);
@@ -1076,6 +1073,8 @@ final class LogicalDisplay {
         pw.println("mRequestedColorMode=" + mRequestedColorMode);
         pw.println("mDisplayOffset=(" + mDisplayOffsetX + ", " + mDisplayOffsetY + ")");
         pw.println("mDisplayScalingDisabled=" + mDisplayScalingDisabled);
+        pw.println("mPrimaryDisplayDevice=" + (mPrimaryDisplayDevice != null ?
+                mPrimaryDisplayDevice.getNameLocked() : "null"));
         pw.println("mBaseDisplayInfo=" + mBaseDisplayInfo);
         pw.println("mOverrideDisplayInfo=" + mOverrideDisplayInfo);
         pw.println("mRequestedMinimalPostProcessing=" + mRequestedMinimalPostProcessing);

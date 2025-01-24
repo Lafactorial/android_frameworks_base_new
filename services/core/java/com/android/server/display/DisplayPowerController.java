@@ -261,10 +261,10 @@ final class DisplayPowerController implements AutomaticBrightnessController.Call
     // The display blanker.
     private final DisplayBlanker mBlanker;
 
-    // The LogicalDisplay tied to this DisplayPowerController.
+    // The LogicalDisplay tied to this DisplayPowerController2.
     private final LogicalDisplay mLogicalDisplay;
 
-    // The ID of the LogicalDisplay tied to this DisplayPowerController.
+    // The ID of the LogicalDisplay tied to this DisplayPowerController2.
     private final int mDisplayId;
 
     // The ID of the display which this display follows for brightness purposes.
@@ -480,7 +480,7 @@ final class DisplayPowerController implements AutomaticBrightnessController.Call
     static final int SCREEN_OFF_CRT = 1;
     static final int SCREEN_OFF_SCALE = 2;
 
-    // True if this DisplayPowerController has been stopped and should no longer be running.
+    // True if this DisplayPowerController2 has been stopped and should no longer be running.
     private boolean mStopped;
 
     private DisplayDeviceConfig mDisplayDeviceConfig;
@@ -871,7 +871,7 @@ final class DisplayPowerController implements AutomaticBrightnessController.Call
         mLeadDisplayId = leadDisplayId;
         final DisplayDevice device = mLogicalDisplay.getPrimaryDisplayDeviceLocked();
         if (device == null) {
-            Slog.wtf(mTag, "Display Device is null in DisplayPowerController for display: "
+            Slog.wtf(mTag, "Display Device is null in DisplayPowerController2 for display: "
                     + mLogicalDisplay.getDisplayIdLocked());
             return;
         }
@@ -945,7 +945,7 @@ final class DisplayPowerController implements AutomaticBrightnessController.Call
     /**
      * Unregisters all listeners and interrupts all running threads; halting future work.
      *
-     * This method should be called when the DisplayPowerController is no longer in use; i.e. when
+     * This method should be called when the DisplayPowerController2 is no longer in use; i.e. when
      * the {@link #mDisplayId display} has been removed.
      */
     public void stop() {
@@ -2678,8 +2678,6 @@ final class DisplayPowerController implements AutomaticBrightnessController.Call
         synchronized (mLock) {
             pw.println();
             pw.println("Display Power Controller:");
-            pw.println("-------------------------");
-
             pw.println("  mDisplayId=" + mDisplayId);
             pw.println("  mLeadDisplayId=" + mLeadDisplayId);
             pw.println("  mLightSensor=" + mLightSensor);
@@ -2754,39 +2752,25 @@ final class DisplayPowerController implements AutomaticBrightnessController.Call
                     + mColorFadeOffAnimator.isStarted());
         }
 
-        pw.println();
         if (mPowerState != null) {
             mPowerState.dump(pw);
         }
 
-        pw.println();
-        if (mDisplayBrightnessController != null) {
-            mDisplayBrightnessController.dump(pw);
-        }
-
-        pw.println();
-        if (mBrightnessClamperController != null) {
-            mBrightnessClamperController.dump(ipw);
-        }
-
-        pw.println();
-        if (mBrightnessRangeController != null) {
-            mBrightnessRangeController.dump(pw);
-        }
-
-        pw.println();
         if (mAutomaticBrightnessController != null) {
             mAutomaticBrightnessController.dump(pw);
             dumpBrightnessEvents(pw);
         }
+
         dumpRbcEvents(pw);
 
-        pw.println();
         if (mScreenOffBrightnessSensorController != null) {
             mScreenOffBrightnessSensorController.dump(pw);
         }
 
-        pw.println();
+        if (mBrightnessRangeController != null) {
+            mBrightnessRangeController.dump(pw);
+        }
+
         if (mBrightnessThrottler != null) {
             mBrightnessThrottler.dump(pw);
         }
@@ -2798,13 +2782,24 @@ final class DisplayPowerController implements AutomaticBrightnessController.Call
         }
 
         pw.println();
+
         if (mWakelockController != null) {
             mWakelockController.dumpLocal(pw);
         }
 
         pw.println();
+        if (mDisplayBrightnessController != null) {
+            mDisplayBrightnessController.dump(pw);
+        }
+
+        pw.println();
         if (mDisplayStateController != null) {
-            mDisplayStateController.dump(pw);
+            mDisplayStateController.dumpsys(pw);
+        }
+
+        pw.println();
+        if (mBrightnessClamperController != null) {
+            mBrightnessClamperController.dump(ipw);
         }
     }
 
